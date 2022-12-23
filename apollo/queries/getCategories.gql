@@ -1,1 +1,7 @@
-
+query getCategories {
+  categories: getCategories {
+    id
+    name
+    color
+  }
+}
