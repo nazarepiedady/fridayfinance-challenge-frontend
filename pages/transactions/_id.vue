@@ -255,5 +255,18 @@ export default {
         })
     },
   },
+  apollo: {
+    transaction: {
+      query: getTransactionById,
+      variables() {
+        return { id: this.$route.params.id }
+      },
+      prefetch: true,
+    },
+    categories: {
+      query: getCategories,
+      prefetch: true,
+    },
+  },
 }
 </script>
