@@ -86,7 +86,7 @@
               v-if="transaction.category"
               class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"
             >
-              <CategoryTag :category="transaction.category" />
+              <CategoryBadge :category="transaction.category" />
               <button
                 type="button"
                 :class="showCategoryChange ? 'bg-red-600' : 'bg-green-600'"
@@ -194,3 +194,27 @@
     </div>
   </div>
 </template>
+
+<script>
+import CategoryBadge from '@/components/CategoryBadge'
+import getCategories from '@/apollo/queries/getCategories'
+import addTransaction from '@/apollo/mutations/addNewTransaction'
+import getTransactionById from '@/apollo/queries/getTransactionById'
+import updateTransaction from '@/apollo/mutations/updateTransaction'
+
+export default {
+  name: 'TransactionDetails',
+  components: { CategoryBadge },
+  data() {
+    return {
+      transaction: {},
+      displayCategoryState: false,
+      selectedCategory: undefined,
+      createdCategory: undefined,
+    }
+  },
+  head() {
+    return { title: 'Transaction Details' }
+  },
+}
+</script>
