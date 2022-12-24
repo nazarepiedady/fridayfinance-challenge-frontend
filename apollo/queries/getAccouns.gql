@@ -1,5 +1,0 @@
-query getAccounts {
-  accounts: getAccounts {
-    name
-  }
-}
