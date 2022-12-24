@@ -36,6 +36,9 @@ export default {
     toNextPage() {
       this.currentPage++
     },
+    toPreviousPage() {
+      if (this.currentPage > 0) this.currentPage++
+    },
   },
 }
 </script>
