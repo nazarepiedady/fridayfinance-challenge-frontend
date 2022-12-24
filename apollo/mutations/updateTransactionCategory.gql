@@ -1,0 +1,20 @@
+mutation updateTransactionCategory(
+  $categoryId: String!
+  $transactionId: String!
+) {
+  updateTransactionCategory(
+    categoryId: $categoryId
+    transactionId: $transactionId
+  ) {
+    id
+    date
+    amount
+    currency
+    reference
+
+    category {
+      name
+      color
+    }
+  }
+}
