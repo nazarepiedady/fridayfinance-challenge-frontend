@@ -224,6 +224,22 @@ export default {
       const year = date.getFullYear()
       return `${day}/${month}/${year}`
     },
+    updateCategory() {
+      this.$apollo
+        .mutate({
+          mutation: updateTransaction,
+          variables: {
+            categoryId: this.selectedCategory,
+            transactionId: this.transaction.id,
+          },
+        })
+        .then(() => {
+          this.$apollo.queries.getTransactionById.refetch()
+        })
+        .finally(() => {
+          this.displayCategoryState = false
+        })
+    },
   },
 }
 </script>
