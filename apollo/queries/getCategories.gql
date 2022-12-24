@@ -1,4 +1,4 @@
-query getCategories {
+query {
   categories: getCategories {
     id
     name

@@ -1,4 +1,4 @@
-query getAccounts {
+query {
   accounts: getAccounts {
     name
   }
