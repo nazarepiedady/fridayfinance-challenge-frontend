@@ -33,6 +33,9 @@ export default {
       this.ascendentOrder = !this.ascendentOrder
       this.currentPage = 0
     },
+    toNextPage() {
+      this.currentPage++
+    },
   },
 }
 </script>
