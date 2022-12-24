@@ -174,7 +174,7 @@ export default {
     makeDateLegible(receivedTime) {
       const date = new Date(parseInt(receivedTime))
       const day = date.getDay()
-      const month = date.getMonth + 1
+      const month = date.getMonth() + 1
       const year = date.getFullYear()
       return `${day}/${month}/${year}`
     },
