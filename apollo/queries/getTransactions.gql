@@ -1,0 +1,26 @@
+query getTransactions(
+  $skip: Int
+  $take: Int
+  $ascOrder: Boolean
+  $selectedBank: String
+  $selectedAccount: String
+) {
+  transactions: getTransactions(
+    skip: $skip
+    take: $take
+    ascOrder: $ascOrder
+    selectedBank: $selectedBank
+    selectedAccount: $selectedAccount
+  ) {
+    id
+    date
+    amount
+    currency
+    reference
+
+    category {
+      name
+      color
+    }
+  }
+}
