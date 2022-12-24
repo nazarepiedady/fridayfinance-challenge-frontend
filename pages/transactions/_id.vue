@@ -180,7 +180,7 @@
                         text-white
                         shadow-sm
                       "
-                      @click="addCategory"
+                      @click="addNewCategory"
                     >
                       Add
                     </button>
