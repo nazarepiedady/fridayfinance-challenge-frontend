@@ -1,5 +1,8 @@
-mutation addNewTransaction($categoryName: String!, $transactionId: String!) {
-  addNewTransaction(
+mutation addNewTransactionCategory(
+  $categoryName: String!
+  $transactionId: String!
+) {
+  addNewTransactionCategory(
     categoryName: $categoryName
     transactionId: $transactionId
   ) {
