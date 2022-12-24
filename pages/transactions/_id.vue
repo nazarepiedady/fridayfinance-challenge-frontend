@@ -198,9 +198,9 @@
 <script>
 import CategoryBadge from '@/components/CategoryBadge'
 import getCategories from '@/apollo/queries/getCategories'
-import addTransaction from '@/apollo/mutations/addNewTransaction'
 import getTransactionById from '@/apollo/queries/getTransactionById'
-import updateTransaction from '@/apollo/mutations/updateTransaction'
+import addNewTransactionCategory from '@/apollo/mutations/addNewTransactionCategory'
+import updateTransactionCategory from '@/apollo/mutations/updateTransactionCategory'
 
 export default {
   name: 'TransactionDetails',
@@ -220,14 +220,14 @@ export default {
     makeDateLegible(receivedTime) {
       const date = new Date(parseInt(receivedTime))
       const day = date.getDay()
-      const month = date.getMonth + 1
+      const month = date.getMonth() + 1
       const year = date.getFullYear()
       return `${day}/${month}/${year}`
     },
     updateCategory() {
       this.$apollo
         .mutate({
-          mutation: updateTransaction,
+          mutation: updateTransactionCategory,
           variables: {
             categoryId: this.selectedCategory,
             transactionId: this.transaction.id,
@@ -243,7 +243,7 @@ export default {
     addNewCategory() {
       this.$apollo
         .mutate({
-          mutation: addTransaction,
+          mutation: addNewTransactionCategory,
           variables: {
             categoryName: this.createdCategory,
             transactionId: this.transaction.id,
