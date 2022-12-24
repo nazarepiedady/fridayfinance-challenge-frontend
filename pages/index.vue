@@ -28,5 +28,11 @@ export default {
       return this.transactionPerPage * this.currentPage
     },
   },
+  methods: {
+    changeOrder() {
+      this.ascendentOrder = !this.ascendentOrder
+      this.currentPage = 0
+    },
+  },
 }
 </script>
