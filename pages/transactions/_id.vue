@@ -240,6 +240,20 @@ export default {
           this.displayCategoryState = false
         })
     },
+    addNewCategory() {
+      this.$apollo
+        .mutate({
+          mutation: addTransaction,
+          variables: {
+            categoryName: this.createdCategory,
+            transactionId: this.transaction.id,
+          },
+        })
+        .then(() => {
+          this.createdCategory = ''
+          this.displayCategoryState = false
+        })
+    },
   },
 }
 </script>
