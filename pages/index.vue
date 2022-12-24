@@ -40,5 +40,28 @@ export default {
       if (this.currentPage > 0) this.currentPage++
     },
   },
+  apollo: {
+    transactions: {
+      query: getTransactions,
+      variables() {
+        return {
+          skip: this.skipCount,
+          take: this.transactionPerPage,
+          ascOrder: this.ascendentOrder,
+          selectedBank: this.selectedBank,
+          selectedAccount: this.selectedAccount,
+        }
+      },
+      prefetch: true,
+    },
+    banks: {
+      query: getBanks,
+      prefetch: true,
+    },
+    accounts: {
+      query: getAccounts,
+      prefetch: true,
+    },
+  },
 }
 </script>
