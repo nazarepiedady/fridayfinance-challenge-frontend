@@ -104,14 +104,14 @@
                   shadow-sm
                 "
                 @click="
-                  showCategoryChange
-                    ? (showCategoryChange = false)
-                    : (showCategoryChange = true)
+                  displayCategoryState
+                    ? (displayCategoryState = false)
+                    : (displayCategoryState = true)
                 "
               >
-                {{ showCategoryChange ? 'Cancel' : 'Change Category' }}
+                {{ displayCategoryState ? 'Cancel' : 'Change Category' }}
               </button>
-              <div v-if="showCategoryChange" class="flex flex-col mt-2 w-80">
+              <div v-if="displayCategoryState" class="flex flex-col mt-2 w-80">
                 <select
                   v-model="selectedCategory"
                   name="category"
