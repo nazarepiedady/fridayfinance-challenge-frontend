@@ -23,5 +23,10 @@ export default {
   head() {
     return { title: 'Transactions' }
   },
+  computed: {
+    skipCount() {
+      return this.transactionPerPage * this.currentPage
+    },
+  },
 }
 </script>
