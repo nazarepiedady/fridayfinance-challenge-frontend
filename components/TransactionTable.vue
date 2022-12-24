@@ -32,7 +32,7 @@
                     scope="col"
                     class="
                       px-3
-                      py-3.5
+                      py-2.5
                       text-left text-sm
                       font-semibold
                       text-gray-900
@@ -44,7 +44,7 @@
                     scope="col"
                     class="
                       px-3
-                      py-3.5
+                      py-2.5
                       text-center text-sm
                       font-semibold
                       text-gray-900
@@ -68,7 +68,7 @@
                     scope="col"
                     class="
                       px-3
-                      py-3.5
+                      py-2.5
                       text-right text-sm
                       font-semibold
                       text-gray-900
@@ -92,7 +92,7 @@
                     v-if="transaction.reference"
                     class="
                       whitespace-nowrap
-                      py-4
+                      py-1.5
                       pl-4
                       pr-3
                       text-sm
@@ -108,7 +108,7 @@
                     v-else
                     class="
                       whitespace-nowrap
-                      py-4
+                      py-1.5
                       pl-4
                       pr-3
                       text-sm
@@ -130,13 +130,13 @@
                     class="
                       whitespace-nowrap
                       px-3
-                      py-4
+                      py-1.5
                       text-sm text-gray-500 text-center
                     "
                   >
                     {{ makeDateLegible(transaction.date) }}
                   </td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-right">
+                  <td class="whitespace-nowrap px-3 py-1.5 text-sm text-right">
                     {{ transaction.amount }}
                     <span class="text-gray-300 text-right">{{
                       transaction.currency
@@ -178,9 +178,9 @@ export default {
       const year = date.getFullYear()
       return `${day}/${month}/${year}`
     },
-  },
-  routeToTransactionDetails(id) {
-    this.$router.push(`transctions/${id}`)
+    routeToTransactionDetails(id) {
+      this.$router.push(`transactions/${id}`)
+    },
   },
 }
 </script>

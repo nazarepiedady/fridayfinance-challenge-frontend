@@ -89,7 +89,7 @@
               <CategoryBadge :category="transaction.category" />
               <button
                 type="button"
-                :class="showCategoryChange ? 'bg-red-600' : 'bg-green-600'"
+                :class="displayCategoryState ? 'bg-red-600' : 'bg-green-600'"
                 class="
                   mt-2
                   inline-flex
