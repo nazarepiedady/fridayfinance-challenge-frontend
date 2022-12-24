@@ -75,7 +75,7 @@
     <TransactionTable
       class="mt-2"
       :transactions="transactions"
-      :asc-order="Boolean(ascendentOrder)"
+      :ascendent-order="Boolean(ascendentOrder)"
       @changeOrder="changeOrder"
     />
     <!-- Pagination Buttons -->
@@ -142,7 +142,7 @@ export default {
   data() {
     return {
       currentPage: 0,
-      transactionPerPage: 20,
+      transactionsPerPage: 20,
       ascendentOrder: undefined,
       selectedBank: undefined,
       selectedAccount: undefined,
@@ -153,7 +153,7 @@ export default {
   },
   computed: {
     skipCount() {
-      return this.transactionPerPage * this.currentPage
+      return this.transactionsPerPage * this.currentPage
     },
   },
   methods: {
@@ -174,7 +174,7 @@ export default {
       variables() {
         return {
           skip: this.skipCount,
-          take: this.transactionPerPage,
+          take: this.transactionsPerPage,
           ascOrder: this.ascendentOrder,
           selectedBank: this.selectedBank,
           selectedAccount: this.selectedAccount,
