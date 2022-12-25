@@ -1,5 +1,5 @@
-query {
+query getBanks {
   banks: getBanks {
-    name
+    bank
   }
 }
