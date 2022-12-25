@@ -43,7 +43,7 @@
           <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">Date</dt>
             <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-              {{ makeDateLegible(transaction.date) }}
+              {{ $makeDateLegible(transaction.date) }}
             </dd>
           </div>
           <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
@@ -217,13 +217,6 @@ export default {
     return { title: 'Transaction Details' }
   },
   methods: {
-    makeDateLegible(receivedTime) {
-      const date = new Date(parseInt(receivedTime))
-      const day = date.getDay()
-      const month = date.getMonth() + 1
-      const year = date.getFullYear()
-      return `${day}/${month}/${year}`
-    },
     updateCategory() {
       this.$apollo
         .mutate({
