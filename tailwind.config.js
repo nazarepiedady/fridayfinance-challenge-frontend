@@ -5,7 +5,9 @@ module.exports = {
     './plugins/**/*.js',
     './components/**/*.{js,vue}',
   ],
-  theme: {},
+  theme: {
+    fontFamily: { sans: ['inter', 'sans-serif'] }
+  },
   variants: {
     extend: { opacity: ['disabled'], cursor: ['disabled'] }
   },
