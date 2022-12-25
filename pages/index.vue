@@ -142,7 +142,7 @@ export default {
   data() {
     return {
       currentPage: 0,
-      transactionsPerPage: 20,
+      transactionsPerPage: 15,
       ascendentOrder: undefined,
       selectedBank: undefined,
       selectedAccount: undefined,

@@ -119,7 +119,15 @@
                   >
                     No Reference Provided
                   </td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  <td
+                    class="
+                      whitespace-nowrap
+                      px-3
+                      py-4
+                      text-sm text-black
+                      font-bold
+                    "
+                  >
                     <CategoryBadge
                       v-if="transaction.category"
                       :category="transaction.category"
@@ -131,16 +139,22 @@
                       whitespace-nowrap
                       px-3
                       py-1.5
-                      text-sm text-gray-500 text-center
+                      text-sm text-gray-600 text-center
                     "
                   >
-                    {{ makeDateLegible(transaction.date) }}
+                    {{ $makeDateLegible(transaction.date) }}
                   </td>
                   <td class="whitespace-nowrap px-3 py-1.5 text-sm text-right">
-                    {{ transaction.amount }}
-                    <span class="text-gray-300 text-right">{{
-                      transaction.currency
-                    }}</span>
+                    <span
+                      :class="{
+                        'text-red-600': isNegativeNumber(transaction.amount),
+                        'text-green-600': !isNegativeNumber(transaction.amount),
+                      }"
+                      >{{ transaction.amount }}</span
+                    >
+                    <span class="text-gray-400 text-right">
+                      {{ transaction.currency }}
+                    </span>
                   </td>
                 </tr>
               </tbody>
@@ -171,15 +185,12 @@ export default {
   },
   emits: ['changeOrder'],
   methods: {
-    makeDateLegible(receivedTime) {
-      const date = new Date(parseInt(receivedTime))
-      const day = date.getDay()
-      const month = date.getMonth() + 1
-      const year = date.getFullYear()
-      return `${day}/${month}/${year}`
-    },
     routeToTransactionDetails(id) {
       this.$router.push(`transactions/${id}`)
+    },
+    isNegativeNumber(string) {
+      const number = Number(string)
+      return number < 0
     },
   },
 }
